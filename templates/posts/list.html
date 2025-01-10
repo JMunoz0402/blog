@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Posts{% endblock title %}
+
+{% block content %}
+<h1>{{ title }} Posts</h1>
+<h1 class="page-title">Posts</h1>
+
+<table class="posts-table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Subtitle</th>
+            <th>Date Created</th>
+            <th>Content</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for post in post_list %}
+        <tr>
+            <td class="post-title">{{ post.title }}</td>
+            <td class="post-subtitle">{{ post.subtitle }}</td>
+            <td class="post-date">{{ post.created_at }}</td>
+            <td class="post-body">{{ post.body }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock content %}
